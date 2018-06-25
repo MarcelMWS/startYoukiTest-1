@@ -1,0 +1,37 @@
+[parity]
+chain = "spec.json"
+base_path = "parity_data"
+no_persistent_txqueue = true
+
+[network]
+#reserved_only = true
+reserved_peers="./bootnodes.txt"
+#id = 79
+#nat="extip:46.237.201.105"
+port = 30303
+
+[rpc]
+apis = ["all"]
+#apis = ["web3","eth","net" ]
+#threads = 4
+interface = "all"
+cors = ["all"]
+hosts = ["all"]
+port = 8545
+
+
+[websockets]
+disable = false
+port = 8546 # port for WS connection which you should provide in .env later as REACT_APP_HOME_WEB_SOCKETS_PARITY_URL
+interface = "all"
+origins = ["all"]
+apis = ["web3", "eth", "net", "parity", "rpc", "secretstore", "pubsub"]
+hosts = ["all"]
+
+
+[ipc]
+disable = false
+apis = ["all"]
+
+[misc]
+log_file = "./logs/parity.log"
